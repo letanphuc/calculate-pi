@@ -4,6 +4,9 @@ import random, math, sys
 # calculate the value of pi
 
 def calculate_pi(n):
+    if n == 0:
+        print("Error: Number of iterations cannot be 0.")
+        return None
     inside_circle = 0.
     inside_square = 0.
     for _ in range(n):
@@ -27,5 +30,6 @@ def calculate_pi(n):
 if __name__ == "__main__":
     iterations = int(sys.argv[1])
     pi = calculate_pi(iterations)
-    print(pi)
-    print("e: " + str(abs(math.pi - pi)))
+    if pi is not None:
+        print(pi)
+        print("e: " + str(abs(math.pi - pi)))
